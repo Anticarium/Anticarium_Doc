@@ -58,4 +58,4 @@ This project consists of four different parts:
 5. `vcpkg integrate install`
 
 ### Passing VCPKG to CMake
-
+Pass `-DCMAKE_TOOLCHAIN_FILE=[path_to_vcpkg_folder]\scripts\buildsystems\vcpkg.cmake`
