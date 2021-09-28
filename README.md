@@ -64,7 +64,7 @@ This project consists of four different parts:
 11. Check `Enable auto format on file save`
 12. Under `Tool:` select `ClangFormat`
 13. Ok
-14. Put `.clang-format` file found here, into your souce directory
+14. Put `.clang-format` file found here, into your source directory
 
 ## VCPKG setup
 1. Go to [this](https://visualstudio.microsoft.com/downloads/) web page and install Visual studio Community edition on your machine
