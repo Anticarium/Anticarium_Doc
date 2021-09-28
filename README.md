@@ -44,7 +44,18 @@ This project consists of four different parts:
 # Development setup (Windows)
 
 ## QT installation
-## VCPKG installation
-### Nlohmann json installation
+1. Go to [this](https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4) QT web page and download QT installer
+2. Open Qt installer and go through all required steps until you get to _Select components_ page, select custom installation
+3. Select Qt 5.15.2 under QT selection
+4. Select OpenSSL toolkit in Developer and Design Tools section
+5. Install
+
+## VCPKG setup
+1. Go to [this](https://visualstudio.microsoft.com/downloads/) web page and install Visual studio Community edition on your machine
+2. Go to [this](https://vcpkg.io/en/getting-started.html) web page and setup VCPKG on your machine
+3. From cmd go to vcpkg directory
+4. `vcpkg install nlohmann-json --triplet=x64-windows`
+5. `vcpkg integrate install`
+
 ### Passing VCPKG to CMake
 
