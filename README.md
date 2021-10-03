@@ -40,6 +40,8 @@ This project consists of four different parts:
 1. CMake documentation https://cmake.org/cmake/help/v3.21/
 2. Qt documentation https://doc.qt.io/qt-5/classes.html
 3. HunterGate documentation https://hunter.readthedocs.io/en/latest/index.html
+4. Change I2C baud rate for Raspberry Pi https://www.raspberrypi-spy.co.uk/2018/02/change-raspberry-pi-i2c-bus-speed/
+5. Bi-directional level shifter for I2C-bus https://cdn-shop.adafruit.com/datasheets/an97055.pdf
 
 # Development setup (Windows)
 
