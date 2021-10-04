@@ -42,6 +42,7 @@ This project consists of four different parts:
 3. HunterGate documentation https://hunter.readthedocs.io/en/latest/index.html
 4. Change I2C baud rate for Raspberry Pi https://www.raspberrypi-spy.co.uk/2018/02/change-raspberry-pi-i2c-bus-speed/
 5. Bi-directional level shifter for I2C-bus https://cdn-shop.adafruit.com/datasheets/an97055.pdf
+6. Raspberry pi I2C library usage https://raspberry-projects.com/pi/programming-in-c/i2c/using-the-i2c-interface
 
 # Development setup (Windows)
 
