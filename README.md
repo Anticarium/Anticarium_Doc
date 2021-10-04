@@ -43,6 +43,7 @@ This project consists of four different parts:
 4. Change I2C baud rate for Raspberry Pi https://www.raspberrypi-spy.co.uk/2018/02/change-raspberry-pi-i2c-bus-speed/
 5. Bi-directional level shifter for I2C-bus https://cdn-shop.adafruit.com/datasheets/an97055.pdf
 6. Raspberry pi I2C library usage https://raspberry-projects.com/pi/programming-in-c/i2c/using-the-i2c-interface
+7. Linear interpolation mathematical function https://stackoverflow.com/questions/8684327/c-map-number-ranges#8684356
 
 # Development setup (Windows)
 
