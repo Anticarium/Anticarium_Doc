@@ -44,6 +44,9 @@ This project consists of four different parts:
 5. Bi-directional level shifter for I2C-bus https://cdn-shop.adafruit.com/datasheets/an97055.pdf
 6. Raspberry pi I2C library usage https://raspberry-projects.com/pi/programming-in-c/i2c/using-the-i2c-interface
 7. Linear interpolation mathematical function https://stackoverflow.com/questions/8684327/c-map-number-ranges#8684356
+8. Speedlog documentation and source https://github.com/gabime/spdlog
+9. PID algorithm documentation and source https://github.com/nicholastmosher/PID
+10. PID algorithm explanation https://www.youtube.com/watch?v=UR0hOmjaHp0
 
 # Development setup (Windows)
 
