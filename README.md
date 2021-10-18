@@ -78,7 +78,8 @@ This project consists of four different parts:
 2. Go to [this](https://vcpkg.io/en/getting-started.html) web page and setup VCPKG on your machine
 3. From cmd go to vcpkg directory
 4. `vcpkg install nlohmann-json --triplet=x64-windows`
-5. `vcpkg integrate install`
+5. `vcpkg install spdlog --triplet=x64-windows`
+6. `vcpkg integrate install`
 
 ### Passing VCPKG to CMake
 Pass `-DCMAKE_TOOLCHAIN_FILE=[path_to_vcpkg_folder]\scripts\buildsystems\vcpkg.cmake`
