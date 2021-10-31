@@ -73,7 +73,7 @@ This project consists of four different parts:
 10. Check `Enable auto format on file save`
 11. Under `Tool:` select `ClangFormat`
 12. Ok
-13. Put `.clang-format` file found here, into your source directory
+13. Put `.clang-format-12` file found here, into your source directory and rename to `.clang-format`
 
 ## VCPKG setup
 1. Go to [this](https://vcpkg.io/en/getting-started.html) web page and setup VCPKG on your machine
