@@ -51,7 +51,7 @@ This project consists of four different parts:
 # Development setup (Windows)
 
 ## Download and install Visual Studio
-1. Go to [this](https://visualstudio.microsoft.com/downloads/) web page and install Visual studio Community edition on your machine, check C++ for Desktop development
+1. Go to [this](https://visualstudio.microsoft.com/downloads/) web page and install Visual Studio Community edition on your machine, check C++ for Desktop development
 
 ## QT installation
 1. Go to [this](https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4) QT web page and download QT installer
@@ -66,14 +66,14 @@ This project consists of four different parts:
 3. Find `Beautifier`
 4. Check `Beautifier` checkbox
 5. Close dialog and restart QT creator
-7. In Qt creator Tools->Options->Beautifier->CLang Format
-8. Find clang-format executable in Visual Studio folder, it is probabbly located here `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-format.exe`
-9. In `Use predefined style` choose `File`
-10. Go to General Tab
-11. Check `Enable auto format on file save`
-12. Under `Tool:` select `ClangFormat`
-13. Ok
-14. Put `.clang-format` file found here, into your source directory
+6. In Qt creator Tools->Options->Beautifier->CLang Format
+7. Find clang-format executable in Visual Studio folder, it is probabbly located here `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-format.exe`
+8. In `Use predefined style` choose `File`
+9. Go to General Tab
+10. Check `Enable auto format on file save`
+11. Under `Tool:` select `ClangFormat`
+12. Ok
+13. Put `.clang-format` file found here, into your source directory
 
 ## VCPKG setup
 1. Go to [this](https://vcpkg.io/en/getting-started.html) web page and setup VCPKG on your machine
@@ -85,3 +85,10 @@ This project consists of four different parts:
 ### Passing VCPKG to CMake
 Pass `-DCMAKE_TOOLCHAIN_FILE=[path_to_vcpkg_folder]\scripts\buildsystems\vcpkg.cmake`
 
+# Development setup (Raspbian)
+
+Described in `README.md`, in [Anticarium_Pi](https://github.com/Anticarium/Anticarium_Pi)
+
+# Development setup (Embedded)
+
+Described in `README.md`, in [Anticarium_IC](https://github.com/Anticarium/Anticarium_IC)
