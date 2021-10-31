@@ -75,7 +75,7 @@ AccessModifierOffset: -2
 #   BAS_AlwaysBreak (in configuration: AlwaysBreak) Always break after an open bracket, if the parameters don’t fit on a single line, e.g.:
 #   someLongFunction(
 #       argument1, argument2);
-AlignAfterOpenBracket: false
+AlignAfterOpenBracket: Align
 
 # AlignConsecutiveAssignments (bool)
 # If true, aligns consecutive assignments.
@@ -84,10 +84,6 @@ AlignAfterOpenBracket: false
 # int b    = 23;
 # int ccc  = 23;
 AlignConsecutiveAssignments: true
-
-# AlignEscapedNewlinesLeft (bool)
-# If true, aligns escaped newlines as far left as possible. Otherwise puts them into the right-most column.
-AlignEscapedNewlinesLeft: true
 
 # AlignOperands (bool)
 # If true, horizontally align operands of binary and ternary expressions.
@@ -110,7 +106,7 @@ AllowShortBlocksOnASingleLine: false
 
 # AllowShortCaseLabelsOnASingleLine (bool)
 # If true, short case labels will be contracted to a single line.
-AllowShortCaseLabelsOnASingleLine: true
+AllowShortCaseLabelsOnASingleLine: false
 
 # AllowShortFunctionsOnASingleLine (ShortFunctionStyle)
 # Dependent on the value, int f() { return 0; } can be put on a single line.
@@ -136,11 +132,7 @@ AlwaysBreakBeforeMultilineStrings: false
 
 # AlwaysBreakTemplateDeclarations (bool)
 # If true, always break after the template<...> of a template declaration.
-AlwaysBreakTemplateDeclarations: false
-
-# BinPackArguments (bool)
-# If false, a function call’s arguments will either be all on the same line or will have one line each.
-#BinPackArguments: false
+AlwaysBreakTemplateDeclarations: Yes
 
 # BinPackParameters (bool)
 # If false, a function declaration’s or function definition’s parameters will either all be on the same line or will have one line each.
@@ -163,17 +155,13 @@ BinPackParameters: false
 #   bool IndentBraces Indent the wrapped braces themselves.
 #BraceWrapping:
 
-# BreakAfterJavaFieldAnnotations (bool)
-# Break after each annotation on a field in Java files.
-#BreakAfterJavaFieldAnnotations:
-
 # BreakBeforeBinaryOperators (BinaryOperatorStyle)
 # The way to wrap binary operators.
 # Possible values:
 #   BOS_None (in configuration: None) Break after operators.
 #   BOS_NonAssignment (in configuration: NonAssignment) Break before operators that aren’t assignments.
 #   BOS_All (in configuration: All) Break before operators.
-BreakBeforeBinaryOperators: false
+BreakBeforeBinaryOperators: None
 
 # BreakBeforeBraces (BraceBreakingStyle)
 # The brace breaking style to use.
@@ -192,26 +180,18 @@ BreakBeforeBraces: Attach
 # If true, ternary operators will be placed after line breaks.
 BreakBeforeTernaryOperators: false
 
-# BreakConstructorInitializersBeforeComma (bool)
-# Always break constructor initializers before commas and align the commas with the colon.
-BreakConstructorInitializersBeforeComma: false
-
 # BreakStringLiterals (bool)
 # Allow breaking string literals when formatting.
-#BreakStringLiterals:
+BreakStringLiterals: true
 
 # ColumnLimit (unsigned)
 # The column limit.
 # A column limit of 0 means that there is no column limit. In this case, clang-format will respect the input’s line breaking decisions within statements unless they contradict other rules.
-ColumnLimit: 200
+ColumnLimit: 150
 
 # CommentPragmas (std::string)
 # A regular expression that describes comments with special meaning, which should not be split into lines or otherwise changed.
 CommentPragmas: ''
-
-# ConstructorInitializerAllOnOneLineOrOnePerLine (bool)
-# If the constructor initializers don’t fit on a line, put each initializer on its own line.
-ConstructorInitializerAllOnOneLineOrOnePerLine: false
 
 # ConstructorInitializerIndentWidth (unsigned)
 # The number of characters to use for indentation of constructor initializer lists.
@@ -227,68 +207,18 @@ ContinuationIndentWidth: 0
 # Fundamentally, C++11 braced lists are formatted exactly like function calls would be formatted in their place. If the braced list follows a name (e.g. a type or variable name), clang-format formats as if the {} were the parentheses of a function call with that name. If there is no name, a zero-length name is assumed.
 Cpp11BracedListStyle: false
 
-# DerivePointerAlignment (bool)
-# If true, analyze the formatted file for the most common alignment of & and \*. PointerAlignment is then used only as fallback.
-DerivePointerBinding: false
-
-# DisableFormat (bool)
-# Disables formatting completely.
-#DisableFormat:
-
-# ExperimentalAutoDetectBinPacking (bool)
-# If true, clang-format detects whether function calls and definitions are formatted with one parameter per line.
-# Each call can be bin-packed, one-per-line or inconclusive. If it is inconclusive, e.g. completely on one line, but a decision needs to be made, clang-format analyzes whether there are other bin-packed cases in the input file and act accordingly.
-# NOTE: This is an experimental flag, that might go away or be renamed. Do not use this in config files, etc. Use at your own risk.
-#ExperimentalAutoDetectBinPacking:
-
-# ForEachMacros (std::vector<std::string>)
-# A vector of macros that should be interpreted as foreach loops instead of as function calls.
-# These are expected to be macros of the form:
-# FOREACH(<variable-declaration>, ...)
-#  <loop-body>
-# In the .clang-format configuration file, this can be configured like:
-# ForEachMacros: ['RANGES_FOR', 'FOREACH']
-# For example: BOOST_FOREACH.
-#ForEachMacros:
-
-# IncludeCategories (std::vector<IncludeCategory>)
-# Regular expressions denoting the different #include categories used for ordering #includes.
-# These regular expressions are matched against the filename of an include (including the <> or “”) in order. The value belonging to the first matching regular expression is assigned and #includes are sorted first according to increasing category number and then alphabetically within each category.
-# If none of the regular expressions match, INT_MAX is assigned as category. The main header for a source file automatically gets category 0. so that it is generally kept at the beginning of the #includes (http://llvm.org/docs/CodingStandards.html#include-style). However, you can also assign negative priorities if you have certain headers that always need to be first.
-# To configure this in the .clang-format file, use:
-# IncludeCategories:
-#   - Regex:           '^"(llvm|llvm-c|clang|clang-c)/'
-#     Priority:        2
-#   - Regex:           '^(<|"(gtest|isl|json)/)'
-#     Priority:        3
-#   - Regex:           '.\*'
-#     Priority:        1
-#IncludeCategories:
-
 # IndentCaseLabels (bool)
 # Indent case labels one level from the switch statement.
 # When false, use the same indentation level as for the switch statement. Switch statement body is always indented one level more than case labels.
-IndentCaseLabels: false
-
-# IndentFunctionDeclarationAfterType (bool)
-# If true, indent when breaking function declarations which are not also definitions after the type.
-IndentFunctionDeclarationAfterType: false
+IndentCaseLabels: true
 
 # IndentWrappedFunctionNames (bool)
 # Indent if a function definition or declaration is wrapped after the type.
-#IndentWrappedFunctionNames:
+IndentWrappedFunctionNames: false
 
 # KeepEmptyLinesAtTheStartOfBlocks (bool)
 # If true, empty lines at the start of blocks are kept.
-#KeepEmptyLinesAtTheStartOfBlocks:
-
-# MacroBlockBegin (std::string)
-# A regular expression matching macros that start a block.
-#MacroBlockBegin:
-
-# MacroBlockEnd (std::string)
-# A regular expression matching macros that end a block.
-#MacroBlockEnd:
+KeepEmptyLinesAtTheStartOfBlocks: false
 
 # MaxEmptyLinesToKeep (unsigned)
 # The maximum number of consecutive empty lines to keep.
@@ -301,18 +231,6 @@ MaxEmptyLinesToKeep: 2
 #   NI_Inner (in configuration: Inner) Indent only in inner namespaces (nested in other namespaces).
 #   NI_All (in configuration: All) Indent in all namespaces.
 NamespaceIndentation: None
-
-# ObjCBlockIndentWidth (unsigned)
-# The number of characters to use for indentation of ObjC blocks.
-#ObjCBlockIndentWidth:
-
-# ObjCSpaceAfterProperty (bool)
-# Add a space after @property in Objective-C, i.e. use @property (readonly) instead of @property(readonly).
-ObjCSpaceAfterProperty: true
-
-# ObjCSpaceBeforeProtocolList (bool)
-# Add a space in front of an Objective-C protocol list, i.e. use Foo <Protocol> instead of Foo<Protocol>.
-ObjCSpaceBeforeProtocolList: true
 
 # PenaltyBreakBeforeFirstCallParameter (unsigned)
 # The penalty for breaking a function call after call(.
@@ -344,15 +262,15 @@ PenaltyReturnTypeOnItsOwnLine: 20
 #   PAS_Left (in configuration: Left) Align pointer to the left.
 #   PAS_Right (in configuration: Right) Align pointer to the right.
 #   PAS_Middle (in configuration: Middle) Align pointer in the middle.
-#PointerAlignment:
+PointerAlignment: Left
 
 # ReflowComments (bool)
 # If true, clang-format will attempt to re-flow comments.
-#ReflowComments: true (from v3.9)
+ReflowComments: false
 
 # SortIncludes (bool)
 # If true, clang-format will sort #includes.
-#SortIncludes: false (from v3.9)
+SortIncludes: true
 
 # SpaceAfterCStyleCast (bool)
 # If true, a space may be inserted after C style casts.
@@ -398,3 +316,8 @@ SpacesInParentheses: false
 # SpacesInSquareBrackets (bool)
 # If true, spaces will be inserted after [ and before ].
 SpacesInSquareBrackets: false
+
+# AllowShortEnumsOnASingleLine (bool) 
+# Allow short enums on a single line.
+AllowShortEnumsOnASingleLine: false
+

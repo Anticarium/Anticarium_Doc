@@ -50,10 +50,13 @@ This project consists of four different parts:
 
 # Development setup (Windows)
 
+## Download and install Visual Studio
+1. Go to [this](https://visualstudio.microsoft.com/downloads/) web page and install Visual studio Community edition on your machine, check C++ for Desktop development
+
 ## QT installation
 1. Go to [this](https://www.qt.io/download-qt-installer?hsCtaTracking=99d9dd4f-5681-48d2-b096-470725510d34%7C074ddad0-fdef-4e53-8aa8-5e8a876d6ab4) QT web page and download QT installer
 2. Open Qt installer and go through all required steps until you get to _Select components_ page, select custom installation
-3. Select Qt 5.15.2 under QT selection
+3. Select Qt 5.15.2 and check MSVC compiled versions under QT selection, unched other compiled versions
 4. Select OpenSSL toolkit in Developer and Design Tools section
 5. Install
 
@@ -63,9 +66,8 @@ This project consists of four different parts:
 3. Find `Beautifier`
 4. Check `Beautifier` checkbox
 5. Close dialog and restart QT creator
-6. Go to [this](https://llvm.org/builds/) web page and install LLVM
 7. In Qt creator Tools->Options->Beautifier->CLang Format
-8. Browse path to CLang format exe, it is probabbly located under `C:\Program Files\LLVM\bin\clang-format.exe`
+8. Find clang-format executable in Visual Studio folder, it is probabbly located here `C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\Llvm\bin\clang-format.exe`
 9. In `Use predefined style` choose `File`
 10. Go to General Tab
 11. Check `Enable auto format on file save`
@@ -74,12 +76,11 @@ This project consists of four different parts:
 14. Put `.clang-format` file found here, into your source directory
 
 ## VCPKG setup
-1. Go to [this](https://visualstudio.microsoft.com/downloads/) web page and install Visual studio Community edition on your machine
-2. Go to [this](https://vcpkg.io/en/getting-started.html) web page and setup VCPKG on your machine
-3. From cmd go to vcpkg directory
-4. `vcpkg install nlohmann-json --triplet=x64-windows`
-5. `vcpkg install spdlog --triplet=x64-windows`
-6. `vcpkg integrate install`
+1. Go to [this](https://vcpkg.io/en/getting-started.html) web page and setup VCPKG on your machine
+2. From cmd go to vcpkg directory
+3. `vcpkg install nlohmann-json --triplet=x64-windows`
+4. `vcpkg install spdlog --triplet=x64-windows`
+5. `vcpkg integrate install`
 
 ### Passing VCPKG to CMake
 Pass `-DCMAKE_TOOLCHAIN_FILE=[path_to_vcpkg_folder]\scripts\buildsystems\vcpkg.cmake`
