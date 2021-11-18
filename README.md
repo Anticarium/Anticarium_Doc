@@ -47,6 +47,9 @@ This project consists of four different parts:
 8. Speedlog documentation and source https://github.com/gabime/spdlog
 9. PID algorithm documentation and source https://github.com/nicholastmosher/PID
 10. PID algorithm explanation https://www.youtube.com/watch?v=UR0hOmjaHp0
+11. Flask `mod_wsgi` deploying https://flask.palletsprojects.com/en/2.0.x/deploying/mod_wsgi/
+12. Flask on Apache configuration https://www.codementor.io/@abhishake/minimal-apache-configuration-for-deploying-a-flask-app-ubuntu-18-04-phu50a7ft
+13. SQLite python code examples https://www.tutorialspoint.com/sqlite/sqlite_python.htm
 
 # Development setup (Windows)
 
