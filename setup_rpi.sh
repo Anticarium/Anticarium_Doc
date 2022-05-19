@@ -39,7 +39,10 @@ mkdir ${HOME}/cmake
 cd ${HOME}/cmake
 wget https://github.com/Kitware/CMake/releases/download/v3.22.4/cmake-3.22.4.tar.gz
 tar -xf cmake-3.22.4.tar.gz
-mv cmake-3.22.4/* .
+
+# The pattern .[!.]* is used to also match hidden files that start with dot
+mv cmake-3.22.4/.[!.]* .
+
 rm -rf cmake-3.22.4
 rm cmake-3.22.4.tar.gz
 chmod +x bootstrap
@@ -55,7 +58,7 @@ sudo apt install -y qt5-default
 echo -e "Qt5 successfully installed\n\n"
 
 #-----------------------------------------------------------------
-echo "Installint git..."
+echo "Installing git..."
 sudo apt install -y git
 echo -e "git successfully installed\n\n"
 
@@ -75,6 +78,11 @@ sudo apt-get install -y python-dev
 echo -e "python-dev successfully installed\n\n"
 
 #-----------------------------------------------------------------
+echo "Installing python3-pip..."
+sudo apt-get install -y python3-pip
+echo -e "python3-pip successfully installed\n\n"
+
+#-----------------------------------------------------------------
 echo "Installing flask..."
 pip3 install flask
 echo -e "flask successfully installed\n\n"
@@ -91,6 +99,7 @@ echo "Configuring apache2..."
 cd ${HOME}/Anticarium_Web
 mv anticarium_web.example anticarium_web.conf
 sudo mv ./anticarium_web.conf /etc/apache2/sites-available
+sudo mv ./apache2.conf.example /etc/apache2/apache2.conf
 sudo a2ensite /etc/apache2/sites-available/anticarium_web.conf
 sudo service apache2 reload
 cd ${HOME}
