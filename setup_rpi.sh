@@ -25,63 +25,65 @@ source .profile
 #-----------------------------------------------------------------
 echo "Updating apt..."
 sudo apt update
+echo -e "apt successfully updated\n\n"
 
 #-----------------------------------------------------------------
 echo "Enabling ssh..."
 sudo touch /boot/ssh
-echo "ssh will be available after next boot\n"
+echo -e "ssh will be available after next boot\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing cmake..."
 sudo apt install -y libssl-dev
 mkdir ${HOME}/cmake
 cd ${HOME}/cmake
-wget https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.sh
-wget https://github.com/Kitware/CMake/releases/download/v3.23.1/cmake-3.23.1-linux-x86_64.tar.gz
-tar -xf cmake-3.23.1-linux-x86_64.tar.gz
+wget https://github.com/Kitware/CMake/releases/download/v3.22.4/cmake-3.22.4.tar.gz
+tar -xf cmake-3.22.4.tar.gz
+rm -rf cmake-3.22.4
+rm cmake-3.22.4.tar.gz
 chmod +x bootstrap
 ./bootstrap
 make
 sudo make install
 cd ${HOME}
-echo -e "cmake successfully installed\n"
+echo -e "cmake successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing Qt5..."
 sudo apt install -y qt5-default
-echo -e "Qt5 successfully installed\n"
+echo -e "Qt5 successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installint git..."
 sudo apt install -y git
-echo -e "git successfully installed\n"
+echo -e "git successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing apache2..."
 sudo apt install -y apache2
-echo -e "apache2 successfully installed\n"
+echo -e "apache2 successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing libapache2-mod-wsgi-py3..."
 sudo apt-get install -y libapache2-mod-wsgi-py3
-echo -e "libapache2-mod-wsgi-py3 successfully installed\n"
+echo -e "libapache2-mod-wsgi-py3 successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing python-dev..."
 sudo apt-get install -y python-dev
-echo -e "python-dev successfully installed\n"
+echo -e "python-dev successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing flask..."
 pip3 install flask
-echo -e "flask successfully installed\n"
+echo -e "flask successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Cloning Anticarium_Web..."
 git clone https://github.com/Anticarium/Anticarium_Web.git
 echo "export ANTICARIUM_WEB_PATH=/home/pi/Anticarium_Web" >> .profile
 source .profile
-echo -e "Anticarium_Web successfully cloned\n"
+echo -e "Anticarium_Web successfully cloned\n\n"
 
 #-----------------------------------------------------------------
 echo "Configuring apache2..."
@@ -91,7 +93,7 @@ sudo mv ./anticarium_web.conf /etc/apache2/sites-available
 sudo a2ensite /etc/apache2/sites-available/anticarium_web.conf
 sudo service apache2 reload
 cd ${HOME}
-echo -e "Configured apache2\n"
+echo -e "Configured apache2\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing raspicam..."
@@ -102,7 +104,7 @@ cd build
 cmake ..
 cd ${HOME}
 rm -rf raspicam
-echo -e "raspicam sucessfully installed\n"
+echo -e "raspicam sucessfully installed\n\n"
 
 #-----------------------------------------------------------------
 REBOOT_SECONDS=60
