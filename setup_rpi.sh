@@ -25,6 +25,7 @@ source .profile
 #-----------------------------------------------------------------
 echo "Updating apt..."
 sudo apt update
+sudo apt upgrade
 echo -e "apt successfully updated\n\n"
 
 #-----------------------------------------------------------------
@@ -54,7 +55,7 @@ echo -e "cmake successfully installed\n\n"
 
 #-----------------------------------------------------------------
 echo "Installing Qt5..."
-sudo apt install -y qt5-default
+sudo apt install -y qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools
 echo -e "Qt5 successfully installed\n\n"
 
 #-----------------------------------------------------------------
