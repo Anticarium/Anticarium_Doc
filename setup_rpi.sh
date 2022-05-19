@@ -19,7 +19,8 @@ fi
 
 echo -e "Performing Anticarium setup for Raspberry Pi...\n"
 cd ${HOME}
-sudo echo "ANTICARIUM_SERVER_IP=$ANTICARIUM_SERVER_IP" >> /etc/environment
+echo "export ANTICARIUM_SERVER_IP=$ANTICARIUM_SERVER_IP" >> .profile
+source .profile
 
 #-----------------------------------------------------------------
 echo "Updating apt..."
@@ -78,7 +79,8 @@ echo -e "flask successfully installed\n"
 #-----------------------------------------------------------------
 echo "Cloning Anticarium_Web..."
 git clone https://github.com/Anticarium/Anticarium_Web.git
-sudo echo "ANTICARIUM_WEB_PATH=/home/pi/Anticarium_Web" >> /etc/environment
+echo "export ANTICARIUM_WEB_PATH=/home/pi/Anticarium_Web" >> .profile
+source .profile
 echo -e "Anticarium_Web successfully cloned\n"
 
 #-----------------------------------------------------------------
