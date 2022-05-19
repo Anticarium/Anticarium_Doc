@@ -39,6 +39,7 @@ mkdir ${HOME}/cmake
 cd ${HOME}/cmake
 wget https://github.com/Kitware/CMake/releases/download/v3.22.4/cmake-3.22.4.tar.gz
 tar -xf cmake-3.22.4.tar.gz
+mv cmake-3.22.4/* .
 rm -rf cmake-3.22.4
 rm cmake-3.22.4.tar.gz
 chmod +x bootstrap
