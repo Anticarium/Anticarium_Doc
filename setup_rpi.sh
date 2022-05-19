@@ -1,5 +1,7 @@
 #!/bin/bash
 #-----------------------------------------------------------------
+set -e
+
 while getopts a:h flag
 do
     case "${flag}" in
@@ -25,7 +27,7 @@ source .profile
 #-----------------------------------------------------------------
 echo "Updating apt..."
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 echo -e "apt successfully updated\n\n"
 
 #-----------------------------------------------------------------
